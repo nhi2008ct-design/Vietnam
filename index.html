@@ -1,107 +1,406 @@
-<!DOCTYPE html>
 <html lang="vi">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello-Vietnam</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
 
-  <style>
-    /* ---- CSS ở đây ---- */
-    :root {
-      --primary: #3B82F6;
-      --bg: #f9fafb;
-      --text: #111827;
-    }
-    body {margin:0;font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);}
-    .navbar{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:#fff;border-bottom:1px solid #e5e7eb;}
-    .logo{display:flex;align-items:center;font-weight:600;gap:8px;}
-    .flag{width:24px;height:24px;}
-    .navbar nav a{margin:0 12px;text-decoration:none;color:var(--text);font-weight:500;}
-    .actions{display:flex;align-items:center;gap:10px;}
-    .btn{border:none;padding:8px 16px;border-radius:6px;cursor:pointer;font-weight:600;}
-    .btn.primary{background:var(--primary);color:#fff;}
-    .btn.secondary{background:#e0f2fe;color:var(--text);}
-    .icon-btn{background:none;border:none;font-size:18px;cursor:pointer;}
-    .search{display:flex;justify-content:center;padding:20px;gap:10px;flex-wrap:wrap;}
-    .search input{padding:10px;border-radius:6px;border:1px solid #d1d5db;min-width:260px;}
-    .places{padding:20px;}
-    .places h2{text-align:center;margin-bottom:20px;}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
-    .card{background:#fff;border-radius:10px;overflow:hidden;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,0.1);}
-    .card img{width:100%;height:150px;object-fit:cover;}
-    .card p{margin:12px 0;font-weight:600;}
-    .suggest{padding:20px;background:#fff;margin:20px;border-radius:10px;}
-    .suggest-content{display:flex;flex-direction:column;gap:16px;}
-    .suggest-item img{width:100%;border-radius:8px;height:180px;object-fit:cover;}
-    @media (min-width:768px){
-      .suggest-content{flex-direction:row;justify-content:space-between;}
-      .suggest-item{flex:1;}
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Hello-Vietnam</title>
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+
+  <style>
+
+    /* ---- CSS ---- */
+
+    :root {
+
+      --primary: #3B82F6;
+
+      --bg: #f9fafb;
+
+      --text: #111827;
+
+    }
+
+    body {
+
+      margin: 0;
+
+      font-family: 'Inter', sans-serif;
+
+      background: var(--bg);
+
+      color: var(--text);
+
+    }
+
+    .navbar {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      padding: 12px 20px;
+
+      background: #fff;
+
+      border-bottom: 1px solid #e5e7eb;
+
+    }
+
+    .logo {
+
+      display: flex;
+
+      align-items: center;
+
+      font-weight: 600;
+
+      gap: 8px;
+
+    }
+
+    .flag {
+
+      width: 24px;
+
+      height: 24px;
+
+    }
+
+    .navbar nav a {
+
+      margin: 0 12px;
+
+      text-decoration: none;
+
+      color: var(--text);
+
+      font-weight: 500;
+
+    }
+
+    .actions {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+    }
+
+    .btn {
+
+      border: none;
+
+      padding: 8px 16px;
+
+      border-radius: 6px;
+
+      cursor: pointer;
+
+      font-weight: 600;
+
+      white-space: nowrap;
+
+    }
+
+    .btn.primary {
+
+      background: var(--primary);
+
+      color: #fff;
+
+    }
+
+    .btn.secondary {
+
+      background: #e0f2fe;
+
+      color: var(--text);
+
+    }
+
+    .icon-btn {
+
+      background: none;
+
+      border: none;
+
+      font-size: 18px;
+
+      cursor: pointer;
+
+    }
+
+    .search {
+
+      display: flex;
+
+      justify-content: center;
+
+      padding: 20px;
+
+      gap: 10px;
+
+      flex-wrap: wrap;
+
+    }
+
+    .search input {
+
+      padding: 10px;
+
+      border-radius: 6px;
+
+      border: 1px solid #d1d5db;
+
+      min-width: 260px;
+
+    }
+
+    .places {
+
+      padding: 20px;
+
+    }
+
+    .places h2 {
+
+      text-align: center;
+
+      margin-bottom: 20px;
+
+    }
+
+    .grid {
+
+      display: grid;
+
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+      gap: 20px;
+
+    }
+
+    .card {
+
+      background: #fff;
+
+      border-radius: 10px;
+
+      overflow: hidden;
+
+      text-align: center;
+
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+    }
+
+    .card img {
+
+      width: 100%;
+
+      height: 150px;
+
+      object-fit: cover;
+
+    }
+
+    .card p {
+
+      margin: 12px 0;
+
+      font-weight: 600;
+
+    }
+
+    .suggest {
+
+      padding: 20px;
+
+      background: #fff;
+
+      margin: 20px;
+
+      border-radius: 10px;
+
+    }
+
+    .suggest-content {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 16px;
+
+    }
+
+    .suggest-item {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 10px;
+
+    }
+
+    .suggest-item img {
+
+      width: 100%;
+
+      border-radius: 8px;
+
+      height: 180px;
+
+      object-fit: cover;
+
+    }
+
+    .suggest-item .btn {
+
+      width: 100%;
+
+    }
+
+    @media (min-width: 768px) {
+
+      .suggest-content {
+
+        flex-direction: row;
+
+        justify-content: space-between;
+
+      }
+
+      .suggest-item {
+
+        flex: 1;
+
+        display: block;
+
+      }
+
+      .suggest-item .btn {
+
+        width: auto;
+
+      }
+
+    }
+
+  </style>
+
 </head>
+
 <body>
 
-  <!-- HEADER -->
-  <header class="navbar">
-    <div class="logo">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg" alt="VN Flag" class="flag" />
-      <span>Hello-Vietnam</span>
-    </div>
-    <nav>
-      <a href="#">Khám phá</a>
-      <a href="#">Cẩm nang</a>
-      <a href="#">Diễn đàn</a>
-    </nav>
-    <div class="actions">
-      <button class="btn primary">Tải App</button>
-      <button class="icon-btn">🔍</button>
-    </div>
-  </header>
 
-  <!-- SEARCH -->
-  <section class="search">
-    <input type="text" placeholder="Tìm kiếm địa điểm du lịch, ẩm thực" />
-    <button class="btn primary">Tìm kiếm</button>
-  </section>
+  <header class="navbar">
 
-  <!-- POPULAR PLACES -->
-  <section class="places">
-    <h2>Địa điểm phổ biến</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="https://i.ibb.co/j3z9gKq/ha-long.jpg" alt="Vịnh Hạ Long">
-        <p>Vịnh Hạ Long</p>
-      </div>
-      <div class="card">
-        <img src="https://i.ibb.co/zbncvgD/hoi-an.jpg" alt="Hội An">
-        <p>Hội An</p>
-      </div>
-      <div class="card">
-        <img src="https://i.ibb.co/6vNkn03/can-tho.jpg" alt="Cần Thơ">
-        <p>Cần Thơ</p>
-      </div>
-    </div>
-  </section>
+    <div class="logo">
 
-  <!-- SMART SUGGEST -->
-  <section class="suggest">
-    <h3>Gợi ý thông minh</h3>
-    <div class="suggest-content">
-      <div class="suggest-item">
-        <img src="https://i.ibb.co/spStHB48/nha-co-binh-thuy-03.jpg" alt="Nhà cổ Bình Thủy">
-        <p>Khám phá Nhà Cổ Bình Thủy – Cần Thơ</p>
-      </div>
-      <div class="suggest-item">
-        <button class="btn secondary">Trải nghiệm Chợ Nổi Cái Răng VR</button>
-      </div>
-      <div class="suggest-item">
-        <p>Hỏi đáp AI: Gợi ý món ăn truyền thống Cần Thơ</p>
-      </div>
-    </div>
-  </section>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg" alt="VN Flag" class="flag" />
+
+      <span>Hello-Vietnam</span>
+
+    </div>
+
+    <nav>
+
+      <a href="#">Khám phá</a>
+
+      <a href="#">Cẩm nang</a>
+
+      <a href="#">Diễn đàn</a>
+
+    </nav>
+
+    <div class="actions">
+
+      <button class="btn primary">Tải App</button>
+
+      <button class="icon-btn">🔍</button>
+
+    </div>
+
+  </header>
+
+
+  <section class="search">
+
+    <input type="text" placeholder="Tìm kiếm địa điểm du lịch, ẩm thực" />
+
+    <button class="btn primary">Tìm kiếm</button>
+
+  </section>
+
+
+  <section class="places">
+
+    <h2>Địa điểm phổ biến</h2>
+
+    <div class="grid">
+
+      <div class="card">
+
+        <img<a href="https://ibb.co/5WMK8Yyk"><img src="https://i.ibb.co/nsgPc3vB/du-lich-vinh-Ha-Long-hinh-anh1-1625911963.jpg" alt="du-lich-vinh-Ha-Long-hinh-anh1-1625911963" border="0"></a>
+
+        <p>Vịnh Hạ Long</p>
+
+      </div>
+
+      <div class="card">
+
+        <img<a href ="https://ibb.co/G44xwpkg"><img src="https://i.ibb.co/677nhwb6/du-lich-hoi-an-thang-10-11-12-1.jpg" alt="du-lich-hoi-an-thang-10-11-12-1" border="0"></a>
+
+        <p>Hội An</p>
+
+      </div>
+
+      <div class="card">
+
+        <img<a href ="https://ibb.co/fzPmYSXy"><img src="https://i.ibb.co/B5S8VPfQ/tat-tan-tat-kinh-nghiem-di-can-tho-ban-can-nho-truoc-khi-di-1650366577.jpg" alt="tat-tan-tat-kinh-nghiem-di-can-tho-ban-can-nho-truoc-khi-di-1650366577" border="0"></a>
+
+        <p>Cần Thơ</p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="suggest">
+
+    <h3>Gợi ý thông minh</h3>
+
+    <div class="suggest-content">
+
+      <div class="suggest-item">
+
+        <img src="https://i.ibb.co/spStHB48/nha-co-binh-thuy-03.jpg" alt="Nhà cổ Bình Thủy" />
+
+        <p>Khám phá Nhà Cổ Bình Thủy – Cần Thơ</p>
+
+        <p>Hỏi đáp AI: Gợi ý món ăn truyền thống Cần Thơ</p>
+
+      </div>
+
+    </div>
+
+  </section>
 
 </body>
+
 </html>
+
